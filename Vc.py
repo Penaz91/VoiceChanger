@@ -1,7 +1,7 @@
 from tkinter import Frame, BooleanVar, Checkbutton, \
         Label, Scale, Button, Radiobutton, HORIZONTAL, \
         Entry, DISABLED, NORMAL, Tk, DoubleVar, StringVar,\
-        filedialog
+        filedialog, messagebox
 from subprocess import Popen, PIPE
 import pickle
 
@@ -183,6 +183,7 @@ class App:
         self.gainTabManagement()
 
     def load(self):
+        messagebox.showwarning("Attention", "This feature uses Python's pickle module, which is weak to arbitrary code execution.\nNever load settings from an untrusted source, it might break your system!")
         f = filedialog.askopenfile(filetypes=[("Python3 Pickle",
                                                "*.pickle")],
                                    mode="rb")

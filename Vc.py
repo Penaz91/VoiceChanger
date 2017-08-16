@@ -306,8 +306,13 @@ class App:
         self.status.config(text="SoX Stopped, now you can change your settings and restart")
 
 
+def on_closing():
+    if messagebox.askyesno(title="Kill pulseaudio?", message="Do you want to close pulseaudio to delete the Voice_Changer Sink?", icon="warning"):
+        Popen(["pulseaudio", "-k"])
+    root.destroy()
+
 root = Tk()
 root.wm_title("Voice Changer 0.0.1")
+root.protocol("WM_DELETE_WINDOW", on_closing)
 app = App(root)
 root.mainloop()
-root.destroy()

@@ -1,4 +1,7 @@
 # VoiceChanger
+
+![Status:Maintenance Only](https://img.shields.io/badge/Project_Status-Maintenance_Only-yellow.svg)
+
 GUI for Sox and pulseaudio allowing for real time voice distortion
 
 ## Requirements
